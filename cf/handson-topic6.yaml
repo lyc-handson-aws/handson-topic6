@@ -2,22 +2,33 @@ AWSTemplateFormatVersion: 2010-09-09
 
 ## =================== DESCRIPTION =================== ##
 Description: >-
-  AWS CF S3 Static Website
-  - The template used to create an ECS Cluster from the ECS Console.
+  A Cloudformation Stack for building a Network zone with
+  2 private zone in  2 different availability zone,
+  2 public zone in  2 different availability zone,
+  Simple website is reachable with loadbalancing,
+  Server that host website are auto-scaled and only provisionned in private zone,
+  Predefined email get message about the autoscaling change.
+    - Amazon VPC(Subnet,InternetGateway,RouteTable,NatGateway)
+    - Amazon SNS
+    - Amazon EC2 Auto Scaling
+    - Amazon Elastic Load Balancing
+  After stack is launched and finished,User need to :
+   1. check URL of loadbalancer to see the web page
+   2. refresh the URL to see loadbalancing
 
 ## ===================== METADATA ===================== ##
 Metadata:
   'AWS::CloudFormation::Interface':
     ParameterGroups:
       - Label:
-          default: DNS parameters for S3 buckets
+          default: Tag parameters for all tagable resources
         Parameters:
-          - paramRootDomain
-          - paramSubdomain
+          - paramUniqueTagName
+          - paramUniqueTagValue
       - Label:
-          default: AWS unique tag parameters
+          default: Email configuration
         Parameters:
-          - paramTagName
+          - paramOperatorEmail
 
 ## ==================== PARAMETERS ==================== ##
 Parameters:
