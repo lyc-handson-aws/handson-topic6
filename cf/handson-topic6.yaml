@@ -13,8 +13,9 @@ Description: >-
     - Amazon EC2 Auto Scaling
     - Amazon Elastic Load Balancing
   After stack is launched and finished,User need to :
-   1. check URL of loadbalancer to see the web page
-   2. refresh the URL to see loadbalancing
+   1. click the link in the email sent to your mail addresse to confirme notification's subscription
+   2. check URL of loadbalancer(a stack's output is defined by name "siteURL") to see the web page
+   3. refresh the URL to see loadbalancing
 
 ## ===================== METADATA ===================== ##
 Metadata:
@@ -390,4 +391,6 @@ Resources:
 Outputs:
   privateKey:
     Value: !GetAtt myEC2KeyPair.KeyFingerprint
+  siteURL:
+    Value: !GetAtt myELB.DNSName
 

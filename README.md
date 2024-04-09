@@ -1,12 +1,23 @@
 # Topic 6 - Docker image website(service) with Database connetion
-###### Yuanchao Hands-on Project
-###### Check this doc and project template on Github  [here](https://github.com/lyc-handson-aws/handson-topic6)
+## Yuanchao Hands-on Project
+
+
+## This readme is more readable  [here](https://github.com/lyc-handson-aws/handson-topic6)
+
+
 
 ## **Overview**
+
 **Project's main features**
-:point_right: A simple website(one web page) accessible via a loadbalance,the website is autocaled
-:point_right: the servers which host the website are not accesible through extern
-:point_right: the accesbility is controled at network zone level
+:point_right: A simple website(one web page) accessible via a load balancer,the website is auto-scaled
+
+:point_right: the servers that host the website are not accessible through extern
+
+:point_right: the accessibility is controlled at network zone level
+
+:point_right: Check the website via load balancer's DNS name: [here](http://stack--myelb-yofujol026w2-892332491.eu-west-3.elb.amazonaws.com/)
+
+
 
 ## **Architecture**
 the diagram below illustrates the architecture(principle) of this project:
@@ -20,6 +31,7 @@ CloudFormation stack's deployment: see GitHub workflows https://github.com/lyc-h
 ## **CloudFormation Stack Quick-create Link**
 Click here to quickly create a same project with the same AWS resources:  [here](https://eu-west-3.console.aws.amazon.com/cloudformation/home?region=eu-west-3#/stacks/create/review?templateURL=https://s3bucket-handson-topic1.s3.eu-west-3.amazonaws.com/CF-template-handson-topic6.yaml)
 **See Stack's description for complete actions to reproduce the same project**
+
 > the default stack's region "Europe (Paris) eu-west-3"
 
 ## **AWS Resources**
@@ -34,12 +46,13 @@ Project's AWS resources:
 - AWS::EC2::EIP - 2 IP attached to public zone for 2 private zone
 - AWS::EC2::NatGateway - 2 gateway as entry of private zone. it's attached to public zone, using eip
 - AWS::EC2::SecurityGroup - 2 secrutiygroup one for ec2, one for loadbalance
-- AWS::AutoScaling::AutoScalingGroup - autosale in private zones
 - AWS::EC2::LaunchTemplate - EC2 launchtemplate used by autoscaling, in the template each EC2 generated create a simple apache website with a web page, in which the content is random
+
+:point_right:AWS::AutoScaling::AutoScalingGroup - autosale in private zones
 
 :point_right: AWS::SNS::Topic - send notification to email, used by autoscaling group
 
 :point_right: AWS::ElasticLoadBalancingV2
 - AWS::ElasticLoadBalancingV2::Listener - define how loadbalancer receive the flow
 - AWS::ElasticLoadBalancingV2::TargetGroup - define how loadblancer send the flow to
-- AWS::ElasticLoadBalancingV2::LoadBalancer - create the loadblancer exists
+- AWS::ElasticLoadBalancingV2::LoadBalancer - create the loadblancer
