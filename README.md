@@ -1,8 +1,7 @@
-# Topic 6 - Docker image website(service) with Database connetion
-## Yuanchao Hands-on Project
+# Topic 6 - Simple http website hosted on loadbalancing & autoscaling private backend(ELB+EC2+VPC+Auto-scaling)
+##  Yuanchao Hands-on Project
 
-
-## This readme is more readable  [here](https://github.com/lyc-handson-aws/handson-topic6)
+## This readme is more readable [here](https://github.com/lyc-handson-aws/handson-topic6)
 
 
 
