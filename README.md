@@ -1,4 +1,4 @@
-# Topic 6 - Simple http website hosted on loadbalancing & autoscaling private backend(ELB+EC2+VPC+Auto-scaling)
+# Topic 6 - Simple http website hosted on loadbalancing & autoscaling private backend(ELB+EC2+VPC+Autoscaling+SNS)
 ##  Yuanchao Hands-on Project
 
 ## This readme is more readable [here](https://github.com/lyc-handson-aws/handson-topic6)
@@ -18,6 +18,20 @@
 
 
 
+# What could be learned in this topic
+
+1. How to build a VPC (network zone) with an Internet Gateway (internet entry).
+2. How to configure private and public subnets.
+3. How to configure a public subnet with a NAT Gateway.
+4. How to configure Route Tables and Routes to associate public and private subnets.
+5. How to configure Security Groups.
+6. How to configure and use an Elastic Load Balancer.
+7. How to configure an EC2 Launch Template to be used by Auto Scaling.
+8. How to configure and use Auto Scaling and Auto Scaling Groups.
+9. How to set up an SNS topic and use it with an Auto Scaling Group.
+
+
+
 ## **Architecture**
 the diagram below illustrates the architecture(principle) of this project:
 
@@ -25,7 +39,7 @@ the diagram below illustrates the architecture(principle) of this project:
 
 
 ## Continue Deployment
-CloudFormation stack's deployment: see GitHub workflows https://github.com/lyc-handson-aws/handson-topic6/blob/main/.github/workflows/action-cf.yaml
+CloudFormation stack's deployment: see GitHub workflows https://github.com/lyc-handson-aws/handson-topic6/blob/master/.github/workflows/action-cf.yaml
 
 ## **CloudFormation Stack Quick-create Link**
 Click here to quickly create a same project with the same AWS resources:  [here](https://eu-west-3.console.aws.amazon.com/cloudformation/home?region=eu-west-3#/stacks/create/review?templateURL=https://s3bucket-handson-topic1.s3.eu-west-3.amazonaws.com/CF-template-handson-topic6.yaml)
